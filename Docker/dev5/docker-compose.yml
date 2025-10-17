@@ -1,0 +1,22 @@
+version: "3.2"
+
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD:
+      POSTGRES_USER:
+      POSTGRES_STORE:
+      POSTGRES_HOST_AUTH_METHOD:
+
+  api:
+    build: ../api/
+    ports:
+      - 3000:3000
+
+  #ollama:
+    #image: ollama:latest
+    #ports:
+      #- 11434:11434
